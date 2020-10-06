@@ -1,7 +1,7 @@
-# kraken2 and bracken
+# barrnap
 
 ## Help
 
 ```sh
-docker run --rm kraken2 kraken2 --help
+docker run --rm barrnap barrnap --help
 ```
