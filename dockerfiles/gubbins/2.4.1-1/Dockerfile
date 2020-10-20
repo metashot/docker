@@ -13,6 +13,8 @@ RUN apt-get install -y \
     curl \
     tar \
     build-essential \
+    autoconf \
+    automake \
     pkg-config \
     zlib1g-dev \
     python3 \
@@ -25,8 +27,7 @@ RUN pip3 install \
   "dendropy>= 4.0" \
   "biopython> 1.59"
 
-RUN mkdir -p /tmp/gubbins
-WORKDIR /tmp/.gubbins
+WORKDIR /tmp/gubbins
 RUN curl -s -L https://github.com/sanger-pathogens/gubbins/archive/v${VERSION}.tar.gz | \
   tar -zxf - --strip-components=1
 RUN autoreconf -i \
