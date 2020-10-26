@@ -8,5 +8,5 @@ DOCKERPATH="dockerfiles/${TOOLNAME}/${VERSION}"
 
 echo Building $TOOLNAME $VERSION
 
-docker build -t ${REGISTRY}/${TOOLNAME}:${VERSION} ${DOCKERPATH}
+docker build --rm -t ${REGISTRY}/${TOOLNAME}:${VERSION} ${DOCKERPATH}
 
