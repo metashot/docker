@@ -7,7 +7,7 @@ ENV VERSION=1:2.6.3-4
 RUN apt-get update
 
 RUN apt-get -y install \
-  prodigal=${PRODIGAL_VERSION}
+  prodigal=${VERSION}
 
 RUN rm -rf /tmp/* \
   && rm -rf /var/lib/apt/lists/*
