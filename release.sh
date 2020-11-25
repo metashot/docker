@@ -10,4 +10,3 @@ echo Building $TOOLNAME $VERSION
 
 docker build --rm -t ${REGISTRY}/${TOOLNAME}:${VERSION} ${DOCKERPATH}
 docker push ${REGISTRY}/${TOOLNAME}:${VERSION}
-docker rmi ${REGISTRY}/${TOOLNAME}:${VERSION}
