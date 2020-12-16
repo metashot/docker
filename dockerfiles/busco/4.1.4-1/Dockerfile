@@ -27,7 +27,7 @@ RUN apt-get -y install \
   augustus=${AUGUSTUS_VERSION}
 
 ENV PATH="/usr/share/augustus/scripts/:${PATH}"
-ENV AUGUSTUS_CONFIG_PATH="/usr/share/augustus/config/"
+RUN mkdir /config
 
 # install pplacer
 WORKDIR /usr/local/pplacer
@@ -59,10 +59,14 @@ WORKDIR /tmp/busco
 RUN curl -s -L https://gitlab.com/ezlab/busco/-/archive/${VERSION}/busco-${VERSION}.tar.gz | \
     tar -zxf - --strip-components=1
 RUN python3 setup.py install
-RUN mkdir /config
 RUN ./scripts/busco_configurator.py config/config.ini /config/busco_config.ini
 ENV BUSCO_CONFIG_FILE="/config/busco_config.ini"
 WORKDIR /
+
+# augustus config
+RUN cp -r /usr/share/augustus/config/ /config/augustus
+RUN chmod 777 /config/augustus/species
+ENV AUGUSTUS_CONFIG_PATH="/config/augustus"
 
 RUN rm -rf /tmp/* \
   && rm -rf /var/lib/apt/lists/*
