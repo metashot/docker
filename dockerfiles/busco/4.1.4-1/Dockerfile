@@ -27,6 +27,7 @@ RUN apt-get -y install \
   augustus=${AUGUSTUS_VERSION}
 
 ENV PATH="/usr/share/augustus/scripts/:${PATH}"
+ENV AUGUSTUS_CONFIG_PATH="/usr/share/augustus/config/"
 
 # install pplacer
 WORKDIR /usr/local/pplacer
