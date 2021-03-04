@@ -1,0 +1,32 @@
+name: anvio
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - python=3.6
+  - sqlite>=3.31.1
+  - pandas
+  - prodigal
+  - mcl
+  - muscle
+  - hmmer=3.2.1
+  - diamond
+  - blast
+  - megahit
+  - spades
+  - bowtie2
+  - bwa
+  - samtools
+  - centrifuge
+  - trimal
+  - iqtree
+  - trnascan-se
+  - r-base
+  - r-stringi
+  - r-tidyverse
+  - r-magrittr
+  - r-optparse
+  - bioconductor-qvalue
+  - fasttree
+  - h5py=2.8.0
+  - fastani
