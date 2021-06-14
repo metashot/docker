@@ -12,7 +12,7 @@ RUN apt-get update
 RUN apt-get -y install \
   perl \
   bowtie2=${VERSION} \
-  samtools=${SAMTOOLS_VERSION} \
+  samtools=${SAMTOOLS_VERSION}
 
 RUN rm -rf /tmp/* \
   && rm -rf /var/lib/apt/lists/*
